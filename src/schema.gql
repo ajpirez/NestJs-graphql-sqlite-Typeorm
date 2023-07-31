@@ -1,0 +1,56 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Author {
+  id: Float!
+  name: String!
+  posts: [Post!]
+}
+
+type Post {
+  """Example field (placeholder)"""
+  id: Int!
+  title: String!
+  content: String
+  authorId: Int!
+  author: Author!
+}
+
+type Query {
+  posts: [Post!]!
+  post(id: Int!): Post!
+  authors: [Author!]!
+  author(id: Int!): Author!
+}
+
+type Mutation {
+  createPost(createPostInput: CreatePostInput!): Post!
+  updatePost(updatePostInput: UpdatePostInput!): Post!
+  removePost(id: Int!): Post!
+  createAuthor(createAuthorInput: CreateAuthorInput!): Author!
+  updateAuthor(updateAuthorInput: UpdateAuthorInput!): Author!
+  removeAuthor(id: Int!): Author!
+}
+
+input CreatePostInput {
+  title: String!
+  content: String
+  authorId: Float!
+}
+
+input UpdatePostInput {
+  title: String
+  content: String
+  authorId: Float
+  id: Int!
+}
+
+input CreateAuthorInput {
+  name: String!
+}
+
+input UpdateAuthorInput {
+  name: String
+  id: Int!
+}
